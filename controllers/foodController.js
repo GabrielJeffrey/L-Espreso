@@ -2,8 +2,8 @@
 const factory = require("../utils/handlerFactory");
 const catchAsync = require("../utils/catchAsync");
 
-const Foods = require("../Models/foodModel");
-const Review = require("../Models/reviewModel");
+const Foods = require("../models/foodModel");
+const Review = require("../models/reviewModel");
 
 exports.getAllFoods = factory.getAll(Foods);
 exports.createFood = factory.createOne(Foods);
