@@ -6,8 +6,8 @@ const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 const cookieParser = require("cookie-parser");
 
-const foodRouter = require("./Routes/foodRoutes");
-const userRouter = require("./Routes/userRoutes");
+const foodRouter = require("./routes/foodRoutes");
+const userRouter = require("./routes/userRoutes");
 
 const globalErrorHandler = require("./Controllers/globalErrorHandler");
 
@@ -42,7 +42,7 @@ app.use(mongoSanitize());
 // Data sanitization against XSS
 app.use(xss());
 
-// app.use(express.static("resources"));
+app.use(express.static("resources"));
 
 // !--------------ROUTES-----------------
 app.use("/api/v1/foods", foodRouter);
