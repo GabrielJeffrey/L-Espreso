@@ -1,0 +1,116 @@
+#myFooter {
+  background-color: #3a3f46;
+  color: white;
+  text-transform: capitalize;
+
+  width: 100%;
+
+  .container {
+    display: flex;
+  }
+
+  .row {
+    padding: 4rem;
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+
+    margin-bottom: 60px;
+  }
+
+  .info {
+    text-align: justify;
+    color: #afb0b1;
+    width: 30%;
+
+    justify-self: flex-start;
+    align-self: flex-start;
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.2;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+  }
+
+  h5 {
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    margin: 2rem 0;
+    font-family: $font-teritiary;
+  }
+
+  .second-bar .logo a {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 68px;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #d2d1d1;
+    text-decoration: none;
+    font-size: 1.5rem;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: none;
+    color: white;
+  }
+
+  .second-bar {
+    background-color: #33373e;
+    text-align: center;
+    padding: 1rem 2rem;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .second-bar a {
+    font-size: 22px;
+    color: #9fa3a9;
+    padding: 10px;
+    transition: 0.2s;
+    line-height: 68px;
+  }
+
+  .second-bar a:hover {
+    text-decoration: none;
+  }
+
+  .facebook:hover {
+    color: #0077e2;
+  }
+
+  .google:hover {
+    color: #ef1a1a;
+  }
+
+  .twitter:hover {
+    color: #00aced;
+  }
+}
+@media screen and (max-width: 767px) {
+  #myFooter {
+    text-align: center;
+  }
+
+  #myFooter .info {
+    text-align: center;
+  }
+}

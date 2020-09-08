@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Texan BBQ Chicken-Pizza",
+    "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    "description": "Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla libero?",
+    "price": 5,
+    "category": "pizza",
+    "premiumOnly": true,
+    "customisable": true,
+    "nonVeg": true
+  },
+  {
+    "name": "Veg Extravaganza Pizza (9-inch)",
+    "summary": "Quis at commodi animi voluptatum sit quibusdam reiciendis adipisicing elit.",
+    "description": "Lorem, ipsum dolor sit amet consecetur adipisicting Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla libero?",
+    "price": 8,
+    "category": "pizza",
+    "customisable": true,
+    "veg": true
+  },
+  {
+    "name": "Peppy Paneer Pizza (9-inch)",
+    "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    "description": "Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla doloremque vel error",
+    "price": 6,
+    "category": "pizza",
+    "veg": true
+  },
+  {
+    "name": "Loaded-Chicken-Pizza (9 Inch)",
+    "summary": "illum sed nihil laudantium perspiciatis sequi molestias ut tempora.",
+    "description": "Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla libero?",
+    "price": 10,
+    "category": "pizza",
+    "containsEgg": true,
+    "nonVeg": true
+  },
+  {
+    "name": "Corn Delight Pizza (9 inch)",
+    "summary": "dolorem iusto perspiciatis doloremque optio eligendi cupiditate unde.",
+    "description": "Loem ipsum dolor sit amet consectetur adipisicing elit. Quis, sint librero? Voluptatum, dolor dolores deserunt minima veritatis fugiat magnam inventore? Doloremque illum sed nihil laudantium perspiciatis sequi molestias ut tempora.",
+    "price": 5,
+    "category": "pizza",
+    "premiumOnly": true,
+    "customisable": true,
+    "containsEgg": true,
+    "veg": true
+  },
+  {
+    "name": "Wandercrust Fiery Chicken-Pizza (9-inch)",
+    "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    "description": "ipsum, dolor sit amet consectetur adipisicing elit. Maxime numquam temporibus nam soluta voluptatum quam saepe beatae facere molestias quibusdam quos ea.",
+    "price": 8,
+    "category": "pizza",
+    "nonVeg": true,
+    "containsEgg": true
+  },
+  {
+    "name": "Italian-Garden Pizza (9 inch)",
+    "summary": "velit placeat nihil consectetur ipsum illo laudantium soluta voluptatem enim.",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur explicabo ipsam suscipit optio culpa minima corrupti commodi eaque. Consequuntur eveniet.",
+    "price": 12,
+    "category": "pizza",
+    "customisable": true,
+    "veg": true,
+    "containsEgg": true
+  }
+]

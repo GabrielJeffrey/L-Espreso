@@ -1,0 +1,407 @@
+.dish {
+  margin-top: 6%;
+
+  &__container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr) [center-start] repeat(8, minmax(min-content, 14rem))
+      [center-end] minmax(6rem, 1fr) [full-end];
+  }
+
+  &__overview {
+    grid-row: 1 / 2;
+    grid-column: full-start / full-end;
+
+    display: grid;
+    width: 100%;
+
+    overflow: hidden;
+
+    grid-template-columns: 6fr 1fr 5fr;
+
+    &--hero {
+      grid-column: 1 / 2;
+
+      width: 100%;
+      height: 90vh;
+
+      display: grid;
+      grid-template-rows: repeat(6, 1fr);
+      grid-template-columns: repeat(6, 1fr);
+
+      transform: translateX(-150%);
+
+      animation: slideInSignContent 15s ease;
+      animation-fill-mode: forwards;
+
+      .triangle {
+        height: 102%;
+        width: 102%;
+
+        margin-top: -0.5rem;
+
+        position: relative;
+        z-index: 20;
+
+        &-2 {
+          margin-top: 0;
+        }
+      }
+
+      figure {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+
+        margin: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+
+          filter: brightness(90%) contrast(120%) saturate(105%);
+
+          position: relative;
+          z-index: 10;
+        }
+      }
+    }
+
+    &--bar {
+      grid-column: 2 / 3;
+
+      background-image: linear-gradient(to top, rgb(255, 200, 230), rgb(230, 239, 253));
+      height: 100%;
+      width: 100%;
+
+      text-align: center;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+      flex-flow: column nowrap;
+
+      padding: 5rem 0;
+      padding-top: 0;
+      font-size: 2rem;
+      text-transform: capitalize;
+
+      .food__ {
+        &name {
+          align-self: center;
+          writing-mode: vertical-lr;
+
+          transform: rotate(180deg);
+
+          font-family: $font-teritiary;
+          font-size: 3rem;
+          font-weight: 400;
+        }
+
+        &rating {
+          font-family: $font-teritiary;
+          font-weight: 100;
+
+          height: 20vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-flow: column nowrap;
+
+          padding: 2rem 1rem;
+
+          background-color: #eb2f64;
+          color: rgb(200, 255, 255);
+
+          .rating {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+          }
+
+          .quantity {
+            font-size: 1.5rem;
+            font-family: $font-teritiary;
+            font-weight: 100;
+          }
+        }
+      }
+    }
+
+    &--description {
+      grid-column: 3 / -1;
+      grid-row: 1 / -1;
+
+      font-size: 1.5rem;
+
+      background-color: rgb(255, 255, 255);
+      box-shadow: 1rem 1rem 10rem rgba(0, 0, 0, 0.1);
+      padding: 8%;
+      margin: 5%;
+      border-radius: 10px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-flow: column nowrap;
+
+      height: 90%;
+
+      text-transform: capitalize;
+
+      .paragraph {
+        color: rgba(0, 0, 0, 0.7);
+      }
+
+      .paragraph:not(:last-of-type) {
+        margin-bottom: 2rem;
+      }
+
+      .list {
+        list-style: none;
+        margin: 3rem 0;
+        padding: 3rem 0;
+        border-top: 1px solid #f2f2f2;
+        border-bottom: 1px solid #f2f2f2;
+        text-transform: capitalize;
+
+        display: flex;
+        flex-wrap: wrap;
+
+        color: rgba(0, 0, 0, 0.7);
+
+        font-family: $font-teritiary;
+        font-size: 1.6rem;
+
+        &__item {
+          flex: 0 0 50%;
+          margin-bottom: 0.7rem;
+
+          ion-icon {
+            display: inline-block;
+            transform: translateY(0.2rem);
+            margin-right: 0.7rem;
+          }
+        }
+      }
+
+      .order {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: column nowrap;
+
+        .notice {
+          text-align: center;
+          font-size: 2rem;
+          font-weight: 100;
+          font-family: $font-primary;
+          color: rgba(0, 0, 0, 0.7);
+          margin-bottom: 2rem;
+        }
+
+        .add-to-cart {
+          width: 30rem;
+          height: 8rem;
+        }
+      }
+    }
+  }
+
+  &__reviews {
+    grid-column: center-start / center-end;
+
+    margin: 12rem 0;
+
+    .reviews {
+      &__form {
+        margin-bottom: 5rem;
+        margin-left: 5rem;
+
+        form {
+          width: 100%;
+          height: 100%;
+
+          .form__group {
+            transition: none;
+            width: 50%;
+
+            .form__submit {
+              transform: none;
+              margin: 0;
+            }
+
+            margin: 2.5rem 0;
+
+            textarea {
+              background-color: #c4fdff;
+              transition: none;
+              resize: vertical;
+              padding: 1rem 2rem;
+
+              height: 100%;
+              width: 100%;
+
+              &:placeholder-shown + label {
+                margin-bottom: -2rem;
+              }
+
+              &:not(:placeholder-shown) + label {
+                margin-bottom: 2rem;
+              }
+            }
+          }
+
+          .form__label {
+            color: rgba(0, 0, 0, 0.7);
+            font-size: 2rem;
+            font-weight: 400;
+            margin-top: 2rem;
+            font-family: $font-teritiary;
+          }
+        }
+
+        .review {
+          &__photo {
+            height: 5rem;
+            width: 5rem;
+            border-radius: 50%;
+          }
+
+          &__user-box {
+            display: flex;
+            align-items: center;
+            text-transform: capitalize;
+
+            font-family: $font-teritiary;
+            height: 100%;
+            width: 100%;
+
+            margin-bottom: 2rem;
+          }
+
+          &__user-name {
+            font-size: 1.3rem;
+            font-weight: bolder;
+            text-transform: uppercase;
+            margin-left: 1rem;
+            color: rgba(0, 0, 0, 0.7);
+          }
+        }
+      }
+
+      &__container {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        grid-gap: 6rem;
+        align-content: stretch;
+
+        .review {
+          background-color: #fff;
+          box-shadow: 1rem 1rem 5rem rgba(0, 0, 0, 0.1);
+          padding: 3rem;
+          margin-bottom: 3.5rem;
+          border-radius: 10px;
+          position: relative;
+          overflow: hidden;
+
+          display: flex;
+          justify-content: space-between;
+          align-items: stretch;
+          flex-flow: column nowrap;
+
+          font-size: 1.5rem;
+
+          transition: all 0.5s ease;
+
+          cursor: default;
+
+          &:hover {
+            box-shadow: 1rem 1rem 10rem rgba(0, 0, 0, 0.1);
+            transform: skew(-2deg, 2deg);
+          }
+
+          &__text {
+            margin-bottom: 2rem;
+            width: 90%;
+            margin-left: 5%;
+            z-index: 10;
+            position: relative;
+
+            font-size: 1.6rem;
+
+            line-height: 1.3;
+
+            text-align: justify;
+
+            color: rgba(0, 0, 0, 0.6);
+
+            border-left: 5px solid #f4f4f4;
+            padding-left: 2rem;
+          }
+
+          &__user {
+            display: flex;
+            align-items: center;
+            text-transform: capitalize;
+
+            font-family: $font-teritiary;
+          }
+
+          &__photo {
+            height: 4.5rem;
+            width: 4.5rem;
+            border-radius: 50%;
+          }
+
+          &__user-box {
+            margin-left: 1.5rem;
+          }
+
+          &__user-name {
+            font-size: 1.3rem;
+            font-weight: bolder;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+            color: rgba(0, 0, 0, 0.7);
+          }
+
+          &__user-date {
+            font-size: 1.1rem;
+            color: rgba(0, 0, 0, 0.6);
+          }
+
+          &__rating {
+            margin-left: auto;
+            font-size: 4rem;
+            font-weight: 300;
+            color: rgb(68, 0, 85);
+
+            ion-icon {
+              color: rgba(255, 195, 238, 0.5);
+              font-size: 15rem;
+              top: -120%;
+              left: -70%;
+            }
+          }
+
+          &::before {
+            content: "\201C";
+            position: absolute;
+            top: -3.5rem;
+            left: -1.5rem;
+            font-size: 25rem;
+            color: #f4f4f4;
+            line-height: 1;
+            font-family: sans-serif;
+            z-index: 1;
+          }
+        }
+      }
+    }
+  }
+}

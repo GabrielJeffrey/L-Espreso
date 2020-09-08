@@ -1,0 +1,42 @@
+%underline {
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 50;
+    background-image: linear-gradient(to bottom, rgb(203, 73, 255), rgb(136, 251, 255));
+    border: none;
+    outline: none;
+
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+  }
+}
+
+span.heading__underline {
+  @extend %underline;
+  &::after {
+    height: 70%;
+    width: 60rem;
+  }
+}
+
+span.heading__underline-2 {
+  @extend %underline;
+  &::after {
+    height: 60%;
+    width: 40rem;
+  }
+}
+
+span.heading__underline-3 {
+  @extend %underline;
+  &::after {
+    background-image: linear-gradient(to bottom right, rgb(209, 92, 255), rgb(90, 249, 255));
+    top: -30%;
+    height: 150%;
+    width: 90%;
+  }
+}

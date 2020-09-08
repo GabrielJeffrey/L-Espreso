@@ -1,0 +1,285 @@
+.sign {
+  width: 100%;
+  height: 90vh;
+
+  display: grid;
+  grid-template-rows: repeat(6, minmax(min-content, 1fr));
+  grid-template-columns: repeat(8, minmax(min-content, 1fr));
+
+  margin-top: 6%;
+
+  .sign__content {
+    grid-column: 1 / 6;
+    grid-row: 1 / -1;
+    display: grid;
+
+    grid-template-rows: repeat(6, minmax(5rem, 1fr));
+    grid-template-columns: repeat(6, minmax(5rem, 1fr));
+
+    background-image: linear-gradient(90deg, transparent 0%, transparent 50%, #ff4646 50%);
+    background-size: 250%;
+    background-position: -0%;
+
+    animation: fillBgSignContent 25s ease;
+    animation-fill-mode: forwards;
+
+    transition: all 0.5s ease;
+
+    h2 {
+      grid-row: 2 / 6;
+      grid-column: 4 / 6;
+      position: relative;
+      margin: 0;
+      z-index: 50;
+
+      font-family: $font-teritiary;
+      font-weight: 900;
+      text-align: end;
+      font-size: 6.5rem;
+      color: rgb(5, 3, 10);
+
+      transform: translateX(-300%);
+
+      animation: slideInSignContent 25s ease;
+      animation-fill-mode: forwards;
+    }
+
+    .chef__sign {
+      grid-row: 1 / -1;
+      grid-column: 1 / 5;
+
+      overflow: hidden;
+
+      transform: translateX(-150%);
+
+      animation: slideInSignContent 25s ease;
+      animation-fill-mode: forwards;
+
+      img {
+        height: 100%;
+        width: 100%;
+        transform: scaleX(-1) translateY(5%);
+        object-fit: contain;
+        object-position: top;
+      }
+    }
+  }
+
+  .sign__form {
+    grid-column: 6 / -1;
+    grid-row: 1 / -1;
+
+    box-shadow: 0 1rem 5rem rgba(black, 0.3);
+
+    background-image: linear-gradient(to bottom right, rgb(24, 22, 39) 70%, rgb(255, 0, 183) 20%);
+
+    position: relative;
+
+    transform: translateX(100%);
+
+    animation: slideInSignForm 6s ease;
+    animation-fill-mode: forwards;
+
+    &--erorr {
+      background-color: rgb(255, 0, 0);
+      font-size: 2rem;
+      font-family: $font-primary;
+      color: rgb(255, 255, 255);
+      position: absolute;
+      top: 6.3%;
+      right: 15%;
+      width: 70%;
+      height: 8%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      z-index: 100;
+    }
+
+    &--tabs {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 50%;
+      height: 100%;
+      font-size: 3rem;
+      font-family: $font-teritiary;
+      font-weight: 200;
+      background-color: rgb(56, 19, 56);
+      position: relative;
+      top: -50%;
+      border-radius: 10px;
+      text-transform: capitalize;
+      letter-spacing: -1px;
+      overflow: hidden;
+      color: rgb(255, 255, 255);
+
+      z-index: 999;
+
+      transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+
+      .sign- {
+        &up--tab {
+          height: 100%;
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          position: relative;
+          z-index: 100;
+        }
+
+        &in--tab {
+          height: 100%;
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          position: relative;
+          z-index: 100;
+        }
+      }
+    }
+  }
+}
+
+.checkbox {
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  .form__input {
+    width: auto;
+  }
+
+  label {
+    transform: translateY(-0.2rem);
+  }
+}
+
+.form {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(autofit, minmax(5rem, 1fr));
+  justify-items: center;
+  align-items: center;
+  text-transform: capitalize;
+
+  &__group {
+    text-transform: capitalize;
+    width: 80%;
+    transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+  }
+
+  .pass-wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+
+    .form__group {
+      width: 45%;
+    }
+  }
+
+  &__input {
+    font-size: 1.8rem;
+    font-family: inherit;
+    color: inherit;
+    padding: 1.5rem 0;
+    padding-left: 1rem;
+    border-radius: 3px;
+    background-color: rgb(103, 187, 252);
+
+    border: none;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    width: 100%;
+    display: block;
+    transition: all 0.3s ease;
+
+    @include respond(tab-land) {
+      width: 80%;
+    }
+    @include respond(tab-port) {
+      width: 100%;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba(black, 0.1);
+      border-bottom: 3px solid rgb(104, 182, 104);
+    }
+
+    &::-webkit-input-placeholder {
+      color: rgba(0, 0, 0, 0.6);
+      letter-spacing: 0.5px;
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid rgb(255, 0, 0);
+    }
+  }
+
+  &__label {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    letter-spacing: 0.5px;
+    color: rgb(114, 246, 255);
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  &__input:placeholder-shown + &__label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &__submit {
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $font-teritiary;
+    font-weight: 200;
+    font-size: 2.3rem;
+    margin-left: 50%;
+    margin-bottom: 2rem;
+    transform: translateX(-50%);
+
+    border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom right, rgb(41, 17, 46), rgb(23, 36, 87));
+    color: rgb(255, 209, 253);
+    letter-spacing: 2px;
+
+    padding: 2rem 10rem;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-image: linear-gradient(to top left, rgb(41, 17, 46), rgb(23, 36, 87));
+      transform: translate(-50%, -0.5rem);
+
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+      letter-spacing: 5px;
+      padding: 2rem 9rem;
+    }
+
+    &:active {
+      background-image: linear-gradient(to top left, rgb(14, 93, 99), rgb(179, 23, 173));
+      color: rgb(176, 226, 255);
+
+      transform: translate(-50%, -0rem);
+
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.rating {
+  font-size: 4rem;
+  font-weight: 100;
+  font-family: $font-teritiary;
+
+  position: relative;
+
+  .content {
+    position: relative;
+    z-index: 20;
+  }
+
+  ion-icon {
+    position: absolute;
+    z-index: 10;
+    top: -70%;
+    left: -3%;
+    color: rgba(42, 21, 43, 0.8);
+    font-size: 7rem;
+    transform: skew(5deg, -10deg);
+  }
+}
