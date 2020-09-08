@@ -9,7 +9,7 @@ const cookieParser = require("cookie-parser");
 const foodRouter = require("./routes/foodRoutes");
 const userRouter = require("./routes/userRoutes");
 
-const globalErrorHandler = require("./Controllers/globalErrorHandler");
+const globalErrorHandler = require("./controllers/globalErrorHandler");
 
 const app = express();
 
