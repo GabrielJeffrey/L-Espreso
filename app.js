@@ -42,7 +42,7 @@ app.use(mongoSanitize());
 // Data sanitization against XSS
 app.use(xss());
 
-app.use(express.static("resources"));
+// app.use(express.static("resources"));
 
 // !--------------ROUTES-----------------
 app.use("/api/v1/foods", foodRouter);
