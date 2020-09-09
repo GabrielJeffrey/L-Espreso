@@ -17,7 +17,11 @@ const app = express();
 // !-----------GLODBAL MIDDLEWARES----------
 
 // Set Security HTTP Headers
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: false,
+  })
+);
 
 // Development Logging
 if (process.env.NODE_ENV === "development") {
