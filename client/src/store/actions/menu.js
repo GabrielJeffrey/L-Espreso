@@ -9,7 +9,7 @@ import {
 } from "../actionTypes/actionTypes";
 import { setAlert } from "./alert";
 
-// Load User
+// Load Menu
 export const loadMenu = () => async (dispatch) => {
   try {
     const res = await api.get("/foods?fields=-_id,-__v");
@@ -53,6 +53,7 @@ export const loadFiltered = (filter) => async (dispatch) => {
 
     if (res.data.data.length === 0) {
       dispatch(setAlert("Invalid Filter, Try Different One!", "danger"));
+      dispatch({ type: FILTER_FAILED });
       dispatch(loadMenu());
       return;
     }

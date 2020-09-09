@@ -51,7 +51,7 @@ class Dish extends PureComponent {
                 <div className="triangle triangle-2"></div>
                 <div className="triangle triangle-3"></div>
                 <figure>
-                  <img src={`/images/dish/${food.image}.jpg`} alt={foodName} />
+                  <img src={`/images/dish/${food.category}/${food.image}`} alt={foodName} />
                 </figure>
               </div>
               <BounceInUp>
@@ -75,7 +75,8 @@ class Dish extends PureComponent {
 
                   <ul className="list">
                     <li className="list__item">
-                      <ion-icon name="chevron-forward-outline"></ion-icon>best Offers
+                      <ion-icon name="chevron-forward-outline"></ion-icon>Price: $
+                      {food.price.toFixed(2)}
                     </li>
                     <li className="list__item">
                       <ion-icon name="chevron-forward-outline"></ion-icon>serves 3

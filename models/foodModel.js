@@ -79,7 +79,7 @@ const foodSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: ["pizza", "burger", "beverage", "noodle", "dessert"],
+      enum: ["pizza", "burger", "beverage", "pasta"],
       default: "other",
     },
   },
@@ -99,7 +99,7 @@ foodSchema.virtual("reviews", {
 // * DOCUMENT MIDDLEWARE: runs before .save() and .create()
 foodSchema.pre("save", function (next) {
   this.slug = slugify(this.name, { lower: true });
-  this.image = this.slug;
+  this.image = this.slug + '.jpg';
   next();
 });
 

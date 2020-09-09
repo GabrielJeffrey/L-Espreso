@@ -3,16 +3,22 @@ import { connect } from "react-redux";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
 import { logout } from "../../../store/actions/auth";
+import Cart from "../../Cart/Cart";
 
 const Header = ({ user, loading, logout }) => {
   let location = useLocation();
 
   const [accDrop, setAccDrop] = useState({});
+  const [isActive, setIsActive] = useState(false);
 
   let header;
 
   const handleLogout = () => {
     logout();
+  };
+
+  const handleCartPos = () => {
+    setIsActive(!isActive);
   };
 
   if (location.pathname === "/sign") {
@@ -85,7 +91,7 @@ const Header = ({ user, loading, logout }) => {
             >
               <div className="wrapper">
                 <img src={`/images/user/${user.avatar}`} alt={user.name} />
-                <div className="name">{user.name}</div>
+                <div className="name">{user.name.split(' ')[0]}</div>
               </div>
               <div style={accDrop} className="content">
                 <NavLink to="/me">My Account</NavLink>
@@ -96,11 +102,13 @@ const Header = ({ user, loading, logout }) => {
                 </Link>
               </div>
             </div>
-            <div className="nav__cart nav__link">
+            <div onClick={handleCartPos} className="nav__cart nav__link">
               <ion-icon name="cart-outline"></ion-icon>
             </div>
           </div>
         </nav>
+
+        <Cart isActive={isActive} handleClose={handleCartPos} />
       </header>
     );
   }

@@ -27,6 +27,7 @@ class App extends PureComponent {
     return (
       <Router>
         <ScrollToTop />
+        
         <Header />
         <Alert />
         <Switch>

@@ -254,6 +254,8 @@
     margin-bottom: 2rem;
     transform: translateX(-50%);
 
+    height: 8rem;
+
     border: none;
     border-radius: 5px;
     background-image: linear-gradient(to bottom right, rgb(41, 17, 46), rgb(23, 36, 87));
@@ -280,6 +282,15 @@
       transform: translate(-50%, -0rem);
 
       box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0);
+    }
+
+    &:focus {
+      outline: none;
+      border: none;
+    }
+
+    .spinner {
+      transform: translateY(-2rem) scale(0.9);
     }
   }
 }

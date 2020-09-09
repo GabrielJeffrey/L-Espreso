@@ -61,10 +61,10 @@ class Menu extends Component {
               <ul>
                 <li className="category">
                   <a
-                    onClick={() => this.handleFilter("category", "noodle")}
-                    className={` ${this.props.filters.category === "noodle" && "category-active"}`}
+                    onClick={() => this.handleFilter("category", "pasta")}
+                    className={` ${this.props.filters.category === "pasta" && "category-active"}`}
                   >
-                    <ion-icon name="fast-food-outline"></ion-icon>Noodle
+                    <ion-icon name="restaurant-outline"></ion-icon>pasta
                   </a>
                 </li>
                 <li className="category">
@@ -189,7 +189,7 @@ class Menu extends Component {
                 this.props.menu.map((dish) => (
                   <div key={dish.slug} className="menu__foods--card">
                     <figure className="food__card--image">
-                      <img src={`/images/dish/${dish.image}.jpg`} alt={dish.name} />
+                      <img src={`/images/dish/${dish.category}/${dish.image}`} alt={dish.name} />
                       <figcaption>
                         <Link to={`/menu/${dish.slug}`}>View More</Link>
                       </figcaption>
@@ -203,11 +203,14 @@ class Menu extends Component {
                     <div className="food__card--features">
                       <div className="food__feature">
                         <ion-icon name="logo-usd"></ion-icon>
-                        <p className="price">{dish.price}</p>
+                        <p className="price">{dish.price.toFixed(2)}</p>
                       </div>
                       <div className="food__feature">
                         <ion-icon
-                          style={{ color: dish.veg ? "green" : "red" }}
+                          style={{
+                            color: dish.veg ? "green" : "red",
+                            border: `1px solid ${dish.veg ? "green" : "red"}`,
+                          }}
                           name="radio-button-on-outline"
                         ></ion-icon>
                         <p className="type">{dish.veg ? "Veg" : "Non veg"}</p>

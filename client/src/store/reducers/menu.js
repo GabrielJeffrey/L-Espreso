@@ -58,6 +58,14 @@ export default function (state = initialState, action) {
       return {
         ...state,
         loading: false,
+        filter: {
+          veg: false,
+          nonVeg: false,
+          containsEgg: false,
+          customisable: false,
+          category: null,
+          sort: null,
+        },
       };
     case FILTER_SUCCESS:
       return {

@@ -64,5 +64,176 @@
     "customisable": true,
     "veg": true,
     "containsEgg": true
+  },
+
+  {
+    "name": "Luger Burger",
+    "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    "description": "Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla libero?",
+    "price": 5,
+    "category": "burger",
+    "premiumOnly": true,
+    "customisable": true,
+    "nonVeg": true
+  },
+  {
+    "name": "Le Pigeon Burger",
+    "summary": "Quis at commodi animi voluptatum sit quibusdam reiciendis adipisicing elit.",
+    "description": "Lorem, ipsum dolor sit amet consecetur adipisicting Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla libero?",
+    "price": 8,
+    "category": "burger",
+    "customisable": true,
+    "veg": true
+  },
+  {
+    "name": "Double Animal Style",
+    "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    "description": "Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla doloremque vel error",
+    "price": 6,
+    "category": "burger",
+    "veg": true
+  },
+  {
+    "name": "Raw Steak Tartare Burger",
+    "summary": "illum sed nihil laudantium perspiciatis sequi molestias ut tempora.",
+    "description": "Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla libero?",
+    "price": 10,
+    "category": "burger",
+    "containsEgg": true,
+    "nonVeg": true
+  },
+  {
+    "name": "Whiskey King Burger",
+    "summary": "dolorem iusto perspiciatis doloremque optio eligendi cupiditate unde.",
+    "description": "Loem ipsum dolor sit amet consectetur adipisicing elit. Quis, sint librero? Voluptatum, dolor dolores deserunt minima veritatis fugiat magnam inventore? Doloremque illum sed nihil laudantium perspiciatis sequi molestias ut tempora.",
+    "price": 5,
+    "category": "burger",
+    "premiumOnly": true,
+    "customisable": true,
+    "containsEgg": true,
+    "nonVeg": true
+  },
+  {
+    "name": "Chargrilled Burger with Roquefort Cheese",
+    "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    "description": "ipsum, dolor sit amet consectetur adipisicing elit. Maxime numquam temporibus nam soluta voluptatum quam saepe beatae facere molestias quibusdam quos ea.",
+    "price": 8,
+    "category": "burger",
+    "nonVeg": true,
+    "containsEgg": true
+  },
+
+  {
+    "name": "Four Cheese Pasta",
+    "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    "description": "Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla libero?",
+    "price": 5,
+    "category": "pasta",
+    "premiumOnly": true,
+    "customisable": true,
+    "nonVeg": true
+  },
+  {
+    "name": "Pasta Carbonara",
+    "summary": "Quis at commodi animi voluptatum sit quibusdam reiciendis adipisicing elit.",
+    "description": "Lorem, ipsum dolor sit amet consecetur adipisicting Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla libero?",
+    "price": 8,
+    "category": "pasta",
+    "customisable": true,
+    "veg": true
+  },
+  {
+    "name": "Gnocchi with Tomato Sauce",
+    "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    "description": "Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla doloremque vel error",
+    "price": 6,
+    "category": "pasta",
+    "veg": true
+  },
+  {
+    "name": "Pasta Con Pomodoro E Basilico",
+    "summary": "illum sed nihil laudantium perspiciatis sequi molestias ut tempora.",
+    "description": "Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla libero?",
+    "price": 10,
+    "category": "pasta",
+    "containsEgg": true,
+    "nonVeg": true
+  },
+  {
+    "name": "Home-Style Baked Pasta",
+    "summary": "dolorem iusto perspiciatis doloremque optio eligendi cupiditate unde.",
+    "description": "Loem ipsum dolor sit amet consectetur adipisicing elit. Quis, sint librero? Voluptatum, dolor dolores deserunt minima veritatis fugiat magnam inventore? Doloremque illum sed nihil laudantium perspiciatis sequi molestias ut tempora.",
+    "price": 5,
+    "category": "pasta",
+    "premiumOnly": true,
+    "customisable": true,
+    "containsEgg": true,
+    "veg": true
+  },
+  {
+    "name": "Ravioli with Coconut Milk & Lemongrass",
+    "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    "description": "ipsum, dolor sit amet consectetur adipisicing elit. Maxime numquam temporibus nam soluta voluptatum quam saepe beatae facere molestias quibusdam quos ea.",
+    "price": 8,
+    "category": "pasta",
+    "nonVeg": true,
+    "containsEgg": true
+  },
+
+  {
+    "name": "Absolut Wonder",
+    "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    "description": "Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla libero?",
+    "price": 5,
+    "category": "beverage",
+    "premiumOnly": true,
+    "customisable": true,
+    "nonVeg": true
+  },
+  {
+    "name": "Strawberry Ginger Martini",
+    "summary": "Quis at commodi animi voluptatum sit quibusdam reiciendis adipisicing elit.",
+    "description": "Lorem, ipsum dolor sit amet consecetur adipisicting Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla libero?",
+    "price": 8,
+    "category": "beverage",
+    "customisable": true,
+    "veg": true
+  },
+  {
+    "name": "Alabama Slammer",
+    "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    "description": "Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla doloremque vel error",
+    "price": 6,
+    "category": "beverage",
+    "veg": true
+  },
+  {
+    "name": "Bewitched Knight",
+    "summary": "illum sed nihil laudantium perspiciatis sequi molestias ut tempora.",
+    "description": "Quis at commodi animi voluptatum sit quibusdam reiciendis maxime nihil quo, officia a rerum, doloremque vel error soluta accusantium impedit nulla libero?",
+    "price": 10,
+    "category": "beverage",
+    "containsEgg": true,
+    "nonVeg": true
+  },
+  {
+    "name": "Naughty Holiday Punches",
+    "summary": "dolorem iusto perspiciatis doloremque optio eligendi cupiditate unde.",
+    "description": "Loem ipsum dolor sit amet consectetur adipisicing elit. Quis, sint librero? Voluptatum, dolor dolores deserunt minima veritatis fugiat magnam inventore? Doloremque illum sed nihil laudantium perspiciatis sequi molestias ut tempora.",
+    "price": 5,
+    "category": "beverage",
+    "premiumOnly": true,
+    "customisable": true,
+    "containsEgg": true,
+    "veg": true
+  },
+  {
+    "name": "White Russian",
+    "summary": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
+    "description": "ipsum, dolor sit amet consectetur adipisicing elit. Maxime numquam temporibus nam soluta voluptatum quam saepe beatae facere molestias quibusdam quos ea.",
+    "price": 8,
+    "category": "beverage",
+    "nonVeg": true,
+    "containsEgg": true
   }
 ]
