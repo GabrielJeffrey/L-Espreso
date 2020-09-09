@@ -10,8 +10,7 @@
     "start:prod": "SET NODE_ENV=production&nodemon server.js",
     "debug": "ndb server.js",
     "seed-DB": "node dev-data/seed-dev-data.js --seed",
-    "delete-DB": "node dev-data/seed-dev-data.js --delete",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "delete-DB": "node dev-data/seed-dev-data.js --delete"
   },
   "author": "Gabriel Jeffrey",
   "license": "MIT",
