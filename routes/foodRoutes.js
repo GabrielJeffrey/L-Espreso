@@ -16,10 +16,10 @@ router
 router.use(authController.protect);
 
 router
-  .route("/:slug/reviews")
+  .route("/:id/reviews")
   .get(foodController.getAllReviews)
   .post((req, res, next) => {
-    req.body.food = req.params.slug;
+    req.body.food = req.params.id;
     req.body.user = req.user.id;
     next();
   }, foodController.createReview)

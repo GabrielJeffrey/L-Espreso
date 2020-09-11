@@ -19,7 +19,7 @@ const reviewSchema = new mongoose.Schema(
       default: Date.now,
     },
     food: {
-      type: String,
+      type: mongoose.Schema.ObjectId,
       ref: "Foods",
       required: [true, "Review must belong to a food."],
     },

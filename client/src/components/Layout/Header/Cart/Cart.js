@@ -60,7 +60,7 @@ const Cart = ({ isActive, handleClose, cart, incrementCart, decrementCart }) => 
                 <div className="dish__features">
                   <div className="dish__feature">
                     <ion-icon name="logo-usd"></ion-icon>
-                    <p className="price">{dish.price.toFixed(2)}</p>
+                    <p className="price">{(dish.price * dish.quantity).toFixed(2)}</p>
                   </div>
                   <div className="dish__feature">
                     <ion-icon

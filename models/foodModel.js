@@ -96,7 +96,7 @@ const foodSchema = new mongoose.Schema(
 foodSchema.virtual("reviews", {
   ref: "Review",
   foreignField: "food",
-  localField: "slug",
+  localField: "_id",
 });
 
 // * DOCUMENT MIDDLEWARE: runs before .save() and .create()

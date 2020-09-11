@@ -42,17 +42,17 @@ export default function (state = initialState, action) {
       }
     case REMOVE_CART:
       const newCart1 = [...state.cart];
-      const index1 = newCart1.indexOf(payload);
-      newCart1.splice(index1, 1);
+      let removedCart = newCart1.filter((el) => el.name !== payload.name);
+
       return {
         ...state,
-        cart: newCart1,
+        cart: removedCart,
       };
     case INCREMENT_CART:
       const newCart2 = [...state.cart];
       const index2 = newCart2.indexOf(payload);
       console.log(newCart2[index2].quantity);
-      newCart2[index2].quantity++ ;
+      newCart2[index2].quantity++;
       return {
         ...state,
         cart: newCart2,

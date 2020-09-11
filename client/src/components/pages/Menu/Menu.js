@@ -138,9 +138,9 @@ class Menu extends Component {
               <h4 className="heading__4">Sort By</h4>
               <div className="filters">
                 <button
-                  onClick={() => this.handleFilter("sortBy", "ratingsAverage")}
+                  onClick={() => this.handleFilter("sort", "ratingsAverage")}
                   className={`filter ${
-                    this.props.filters.sortBy === "ratingsAverage" && "filter-active"
+                    this.props.filters.sort === "ratingsAverage" && "filter-active"
                   }`}
                 >
                   <p>featured</p>

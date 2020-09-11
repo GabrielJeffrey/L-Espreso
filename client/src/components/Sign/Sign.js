@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 import { WobbleErrorForm } from "../../utils/animations";
 
-import { authStart, register, login } from "../../store/actions/auth";
+import {  register, login } from "../../store/actions/auth";
 
 import { Spinner } from "../Layout/Spinner/Spinner";
 

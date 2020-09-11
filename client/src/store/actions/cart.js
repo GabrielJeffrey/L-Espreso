@@ -38,6 +38,7 @@ export const addCart = (dish) => (dispatch) => {
 };
 
 export const removeCart = (dish) => (dispatch) => {
+  console.log(dish);
   dispatch({
     type: REMOVE_CART,
     payload: dish,
@@ -69,7 +70,7 @@ export const decrementCart = (dish) => (dispatch) => {
 
 export const saveCart = (cart) => async (dispatch) => {
   try {
-     await api.patch("/users/cart", { cart });
+    await api.patch("/users/cart", { cart });
 
     dispatch({
       type: SAVE_SUCCESS,

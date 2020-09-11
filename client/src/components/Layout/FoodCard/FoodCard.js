@@ -18,23 +18,24 @@ const FoodCard = ({ dish, cart, addCart, removeCart, isAuth }) => {
     quantity: 1,
   });
 
-  for (const key in dish) {
-    for (const cartKey in cart) {
-      if (cart[cartKey] === dish[key]) {
-        setFood({
-          name: cart.name,
-          image: cart.image,
-          slug: cart.slug,
-          veg: cart.veg,
-          category: cart.category,
-          containsEgg: cart.containsEgg,
-          ratingsAverage: cart.ratingsAverage,
-          price: cart.price,
-          quantity: 1,
-        });
-      }
-    }
-  }
+  // for (const key in dish) {
+  //   for (const cartKey in cart) {
+  //     console.log(dish, cart);
+  //     if (cart[0] === dish[key]) {
+  //       setFood({
+  //         name: cart.name,
+  //         image: cart.image,
+  //         slug: cart.slug,
+  //         veg: cart.veg,
+  //         category: cart.category,
+  //         containsEgg: cart.containsEgg,
+  //         ratingsAverage: cart.ratingsAverage,
+  //         price: cart.price,
+  //         quantity: 1,
+  //       });
+  //     }
+  //   }
+  // }
 
   const addToCart = () => {
     addCart(food);
@@ -58,10 +59,7 @@ const FoodCard = ({ dish, cart, addCart, removeCart, isAuth }) => {
 
   if (check.length > 0) {
     content = (
-      <button
-        onClick={removeFromCart }
-        className="remove-from-cart"
-      >
+      <button onClick={removeFromCart} className="remove-from-cart">
         <h3 className="center top heading__teritiary heading__teritiary--underlined">
           Remove from cart
         </h3>
