@@ -1,4 +1,7 @@
-.button-2 {
+%cart {
+  height: 100%;
+  width: 100%;
+
   background-color: rgb(255, 188, 246);
   text-decoration: none;
 
@@ -10,6 +13,10 @@
   cursor: pointer;
 
   transition: all 0.5s ease;
+}
+
+.add-to-cart {
+  @extend %cart;
 
   ion-icon {
     font-size: 4rem;
@@ -39,5 +46,22 @@
   &:active {
     outline: none;
     box-shadow: 25vw 0.1rem 0.1rem rgb(255, 174, 244) inset;
+  }
+}
+
+.remove-from-cart {
+  @extend %cart;
+
+  background-color: rgba(255, 47, 85, 0.623);
+
+  &:focus,
+  &:hover {
+    outline: none;
+    box-shadow: 6.5vw 0 0.1rem rgba(255, 0, 0, 0.6) inset;
+  }
+
+  &:active {
+    outline: none;
+    box-shadow: 25vw 0 0.1rem rgba(255, 0, 0, 0.6) inset;
   }
 }

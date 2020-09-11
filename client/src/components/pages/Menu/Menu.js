@@ -3,10 +3,9 @@ import { connect } from "react-redux";
 
 import { Slideshow } from "../../Layout/Slideshow/Slideshow";
 
-import { Link } from "react-router-dom";
-
 import { loadMenu, loadFiltered, addFilter } from "../../../store/actions/menu";
 import { Spinner } from "../../Layout/Spinner/Spinner";
+import FoodCard from "../../Layout/FoodCard/FoodCard";
 
 class Menu extends Component {
   componentDidMount() {
@@ -29,6 +28,12 @@ class Menu extends Component {
 
   handleSaveFilters = () => {
     return this.props.loadFiltered(this.props.filters);
+  };
+
+  handleCartClick = () => {
+    this.setState((prevState) => ({
+      isActive: !prevState.isActive,
+    }));
   };
 
   render() {
@@ -174,7 +179,7 @@ class Menu extends Component {
               <a
                 href="#menu__container"
                 onClick={this.handleSaveFilters}
-                className="add-to-cart save-filters"
+                className="button-2 save-filters"
               >
                 <h3 className="center top heading__teritiary heading__teritiary--underlined">
                   Save Filters
@@ -187,44 +192,7 @@ class Menu extends Component {
             <div className="menu__foods--container">
               {this.props.menu ? (
                 this.props.menu.map((dish) => (
-                  <div key={dish.slug} className="menu__foods--card">
-                    <figure className="food__card--image">
-                      <img src={`/images/dish/${dish.category}/${dish.image}`} alt={dish.name} />
-                      <figcaption>
-                        <Link to={`/menu/${dish.slug}`}>View More</Link>
-                      </figcaption>
-                    </figure>
-                    <div className="food__card--name">
-                      <h3 className="center  heading__teritiary heading__teritiary--underlined">
-                        {dish.name}
-                      </h3>
-                    </div>
-
-                    <div className="food__card--features">
-                      <div className="food__feature">
-                        <ion-icon name="logo-usd"></ion-icon>
-                        <p className="price">{dish.price.toFixed(2)}</p>
-                      </div>
-                      <div className="food__feature">
-                        <ion-icon
-                          style={{
-                            color: dish.veg ? "green" : "red",
-                            border: `1px solid ${dish.veg ? "green" : "red"}`,
-                          }}
-                          name="radio-button-on-outline"
-                        ></ion-icon>
-                        <p className="type">{dish.veg ? "Veg" : "Non veg"}</p>
-                      </div>
-                    </div>
-
-                    <button className="add-to-cart">
-                      <ion-icon name="cart-outline"></ion-icon>
-                      <h3 className="center top heading__teritiary heading__teritiary--underlined">
-                        Add To Cart
-                      </h3>
-                    </button>
-                    {dish.customisable ? <p className="customisable">Customisable</p> : null}
-                  </div>
+                  <FoodCard cart={this.props.cart} dish={dish} key={dish.slug} />
                 ))
               ) : (
                 <Spinner />
@@ -240,6 +208,7 @@ class Menu extends Component {
 const mapStateToProps = (state) => ({
   menu: state.menu.foods,
   filters: state.menu.filter,
+  cart: state.cart.cart,
 });
 
 export default connect(mapStateToProps, { loadMenu, addFilter, loadFiltered })(Menu);

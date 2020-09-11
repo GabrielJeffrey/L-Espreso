@@ -11,6 +11,14 @@ router.get("/logout", authController.logout);
 
 router.use(authController.protect);
 
+router
+  .route("/cart")
+  .get(userController.getCart)
+  .patch((req, res, next) => {
+    req.params.id = req.user.id;
+    next();
+  }, userController.updateCart);
+
 router.patch("/updateMyPassword", authController.updatePassword);
 
 router.get("/me", userController.getMe, userController.getUser);

@@ -5,7 +5,7 @@ const factory = require("../utils/handlerFactory");
 
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {};
-  Object.keys(obj).forEach(el => {
+  Object.keys(obj).forEach((el) => {
     if (allowedFields.includes(el)) newObj[el] = obj[el];
   });
   return newObj;
@@ -20,10 +20,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
   // * 1) Create error if user POSTs password data
   if (req.body.password || req.body.passwordConfirm) {
     return next(
-      new AppError(
-        "this route is not for password updates. Please use /updateMyPassword",
-        400
-      )
+      new AppError("this route is not for password updates. Please use /updateMyPassword", 400)
     );
   }
 
@@ -33,13 +30,13 @@ exports.updateMe = catchAsync(async (req, res, next) => {
   // * 3) Update user document
   const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
     new: true,
-    runValidators: true
+    runValidators: true,
   });
 
   // * 4) Send the updated data
   res.status(200).json({
     status: "success",
-    data: { user: updatedUser }
+    data: { user: updatedUser },
   });
 });
 
@@ -54,3 +51,6 @@ exports.getUser = factory.getOne(User);
 // Do not update passwords with this
 exports.updateUser = factory.updateOne(User);
 exports.deleteUser = factory.deleteOne(User);
+
+exports.getCart = factory.getAll(User);
+exports.updateCart = factory.updateOne(User);

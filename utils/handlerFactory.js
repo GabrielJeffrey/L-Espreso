@@ -70,7 +70,7 @@ exports.getAll = (Model) =>
   catchAsync(async (req, res, next) => {
     // To allow for nested GET reviews on food (hack)
     let filter = {};
-    if (req.params.foodId) filter = { food: req.params.foodId };
+    if (req.params.slug) filter = { food: req.params.slug };
 
     const features = new APIFeatures(Model.find(filter), req.query)
       .filter()

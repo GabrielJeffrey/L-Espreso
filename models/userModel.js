@@ -1,51 +1,54 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: [true, "Please tell us your name!"],
-  },
-  email: {
-    type: String,
-    required: [true, "Please provide your email"],
-    unique: true,
-    lowercase: true,
-  },
-  avatar: {
-    type: String,
-    default: "default.svg",
-  },
-  role: {
-    type: String,
-    enum: ["user", "premium-user", "admin"],
-    default: "user",
-  },
-  cart: {
-    type: Array,
-  },
-  orders: {
-    type: Array,
-  },
-  password: {
-    type: String,
-    required: [true, "Please provide a password"],
-    minlength: 8,
-    select: false,
-  },
-  passwordConfirm: {
-    type: String,
-    required: [true, "Please confirm your password"],
-    validate: {
-      // This only works on CREATE and SAVE!!!
-      validator: function (el) {
-        return el === this.password;
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "Please tell us your name!"],
+    },
+    email: {
+      type: String,
+      required: [true, "Please provide your email"],
+      unique: true,
+      lowercase: true,
+    },
+    avatar: {
+      type: String,
+      default: "default.svg",
+    },
+    role: {
+      type: String,
+      enum: ["user", "premium-user", "admin"],
+      default: "user",
+    },
+    password: {
+      type: String,
+      required: [true, "Please provide a password"],
+      minlength: 8,
+      select: false,
+    },
+    passwordConfirm: {
+      type: String,
+      required: [true, "Please confirm your password"],
+      validate: {
+        // This only works on CREATE and SAVE!!!
+        validator: function (el) {
+          return el === this.password;
+        },
+        message: "Passwords are not the same!",
       },
-      message: "Passwords are not the same!",
+    },
+    passwordChangedAt: Date,
+    cart: {
+      type: Array,
     },
   },
-  passwordChangedAt: Date,
-});
+  {
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  }
+);
 
 userSchema.pre("save", async function (next) {
   // Only run this function if password was actually modified

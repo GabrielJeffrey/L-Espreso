@@ -2,19 +2,58 @@
   height: 100vh;
   width: 20vw;
   background-image: linear-gradient(to bottom right, #fcfcfc 80%, rgb(255, 198, 253) 50%);
-  padding: 2rem 0;
-  padding-top: 0;
 
   transition: all 0.5s ease;
 
   position: absolute;
   top: 0;
   right: -20vw;
+  z-index: 801;
 
   .line {
     width: 90%;
     margin-left: 5%;
     background-color: rgba(28, 28, 31, 0.2);
+  }
+
+  .proceed {
+    height: 9rem;
+    width: 100%;
+    padding: 0 2rem;
+
+    margin-top: 10%;
+
+    background-color: rgb(162, 196, 111);
+
+    ion-icon {
+      font-size: 4rem;
+      transform: translate(1rem, -0.5rem);
+      color: rgb(26, 26, 49);
+      transition: all 0.5s ease;
+    }
+
+    h3 {
+      transform: translateX(-1rem);
+      transition: all 0.5s ease;
+    }
+
+    &:hover {
+      box-shadow: 6.5vw 0.1rem 0.1rem rgb(255, 220, 24) inset;
+
+      ion-icon {
+        transform: translate(0rem, -0.5rem);
+      }
+
+      h3 {
+        transform: translateX(0rem);
+      }
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+      box-shadow: 25vw 0.1rem 0.1rem rgb(255, 239, 9) inset;
+    }
   }
 
   .cart-header {
@@ -25,7 +64,7 @@
 
     text-transform: capitalize;
     text-align: center;
-    
+
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -33,6 +72,7 @@
     .details {
       text-align: end;
       p {
+        margin-top: 1rem;
         font-size: 1.5rem;
         font-weight: 100;
         font-family: $font-teritiary;
@@ -57,7 +97,7 @@
 }
 
 #cart-container {
-  height: 100%;
+  height: 70%;
   width: 100%;
 
   display: grid;
@@ -66,6 +106,235 @@
   grid-auto-flow: row;
 
   text-transform: capitalize;
+
+  overflow: auto;
+
+  padding: 0 2rem;
+
+  .dish {
+    height: fit-content;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 5px;
+
+    &:not(:first-of-type) {
+      margin-top: 3rem;
+    }
+
+    &:hover {
+      .dish__features {
+        top: 64%;
+      }
+    }
+
+    .plus-minus-cart {
+      height: 5rem;
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      background-color: rgb(224, 133, 247);
+
+      .increment {
+        height: 100%;
+        width: 30%;
+
+        outline: none;
+        border: none;
+
+        font-size: 3.5rem;
+        cursor: pointer;
+
+        background-color: white;
+
+        &:hover,
+        &:active {
+          background-color: #f4f4f4;
+        }
+      }
+
+      .decrement {
+        height: 100%;
+        width: 30%;
+
+        outline: none;
+        border: none;
+
+        font-size: 3.5rem;
+        cursor: pointer;
+
+        background-color: white;
+
+        &:hover,
+        &:active {
+          background-color: #f4f4f4;
+        }
+      }
+
+      h3 {
+        text-align: center;
+      }
+    }
+
+    &__name {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 10;
+
+      width: 80%;
+
+      transform: translateY(130%);
+
+      h3 {
+        font-size: 2.3rem;
+        font-weight: 400;
+      }
+    }
+
+    &__features {
+      width: 100%;
+      height: fit-content;
+      padding: 1rem 2rem;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      position: absolute;
+      top: 120%;
+      left: 0;
+      z-index: 15;
+
+      background-color: rgb(255, 255, 255);
+
+      font-size: 1.5rem;
+
+      transition: all 0.5s ease;
+
+      .dish__feature {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        height: 100%;
+
+        text-transform: capitalize;
+
+        font-size: 2rem;
+
+        p {
+          font-family: $font-primary;
+          font-weight: 400;
+          color: rgba(0, 0, 0, 0.7);
+          font-size: 1.6rem;
+        }
+
+        ion-icon {
+          color: rgb(124, 70, 124);
+          margin-right: 1rem;
+        }
+      }
+    }
+
+    &__image {
+      height: 20rem;
+      width: 100%;
+
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: 5;
+
+      transition: all 0.5s ease;
+
+      overflow: hidden;
+
+      &:hover {
+        img {
+          transform: scale(1.1);
+          filter: blur(2px) saturate(120%) brightness(80%) contrast(120%);
+        }
+        &::after {
+          top: 0;
+        }
+      }
+
+      &::after {
+        content: "";
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 8;
+        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0.3));
+
+        transition: all 0.5s ease;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        transition: all 0.5s ease;
+      }
+
+      figcaption {
+        font-size: 2.5rem;
+        font-family: $font-teritiary;
+        font-weight: 100;
+        text-align: center;
+        padding: 2rem 0;
+        width: 100%;
+        color: rgb(255, 255, 255);
+
+        background-color: rgba(0, 0, 0, 0.2);
+
+        position: absolute;
+        top: 16%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+
+        box-shadow: 0.1rem 0.1rem 2rem rgba(0, 0, 0, 0.2);
+
+        transition: all 0.5s ease;
+
+        cursor: pointer;
+
+        &:hover {
+          background-color: white;
+          letter-spacing: 1px;
+          transform: translate(-50%, -55%);
+
+          box-shadow: 0.1rem 0.1rem 2rem rgba(0, 0, 0, 0.8);
+
+          color: black;
+        }
+
+        &:active,
+        &:focus {
+          transform: translate(-50%, -50%);
+          letter-spacing: 0;
+
+          box-shadow: 0.1rem 0.1rem 2rem rgba(0, 0, 0, 0.2);
+
+          background-color: rgb(222, 237, 234);
+        }
+
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+    }
+  }
 
   .empty {
     height: 100%;

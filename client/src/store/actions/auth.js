@@ -10,6 +10,7 @@ import {
   LOGOUT,
   AUTH_START,
 } from "../actionTypes/actionTypes";
+import { loadCart } from "./cart";
 
 // Load User
 export const loadUser = () => async (dispatch) => {
@@ -20,6 +21,8 @@ export const loadUser = () => async (dispatch) => {
       type: USER_LOADED,
       payload: res.data.data[0],
     });
+
+    dispatch(loadCart(res.data.data[0].cart));
   } catch (err) {
     dispatch({
       type: AUTH_ERROR,
@@ -44,13 +47,15 @@ export const register = (formData) => async (dispatch) => {
     dispatch(setAlert("Successfully Registered", "success"));
     dispatch(loadUser());
   } catch (err) {
-    console.log(err);
+    const errors = err.response.data;
 
-    const errors = err.response.data.errors;
-
-    if (errors) {
-      errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+    if (typeof errors == Array) {
+      errors.forEach((error) => dispatch(setAlert(error.message, "danger")));
     }
+
+    if (errors.error.code === 11000) {
+      dispatch(setAlert("Email Already Taken", "danger"));
+    } else dispatch(setAlert(errors.message, "danger"));
 
     dispatch({
       type: REGISTER_FAIL,
@@ -72,13 +77,13 @@ export const login = (formData) => async (dispatch) => {
     dispatch(setAlert("Successfully Logged In", "success"));
     dispatch(loadUser());
   } catch (err) {
-    console.log(err);
+    const errors = err.response.data;
 
-    const errors = err.response.data.errors;
-
-    if (errors) {
-      errors.forEach((error) => dispatch(setAlert(error.msg, "danger")));
+    if (typeof errors == Array) {
+      errors.forEach((error) => dispatch(setAlert(error.message, "danger")));
     }
+
+    dispatch(setAlert(errors.message, "danger"));
 
     dispatch({
       type: LOGIN_FAIL,

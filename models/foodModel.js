@@ -41,7 +41,10 @@ const foodSchema = new mongoose.Schema(
       },
     },
     image: String,
-    slug: String,
+    slug: {
+      type: String,
+      ref: "User",
+    },
     premiumOnly: {
       type: Boolean,
       default: false,
@@ -93,13 +96,13 @@ const foodSchema = new mongoose.Schema(
 foodSchema.virtual("reviews", {
   ref: "Review",
   foreignField: "food",
-  localField: "_id",
+  localField: "slug",
 });
 
 // * DOCUMENT MIDDLEWARE: runs before .save() and .create()
 foodSchema.pre("save", function (next) {
   this.slug = slugify(this.name, { lower: true });
-  this.image = this.slug + '.jpg';
+  this.image = this.slug + ".jpg";
   next();
 });
 

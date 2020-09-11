@@ -5,10 +5,7 @@ const authController = require("../controllers/authController");
 
 const router = express.Router();
 
-router
-  .route("/")
-  .get(foodController.getAllFoods)
-  .post(foodController.createFood);
+router.route("/").get(foodController.getAllFoods).post(foodController.createFood);
 
 router
   .route("/:slug")
@@ -19,10 +16,10 @@ router
 router.use(authController.protect);
 
 router
-  .route("/:id/reviews")
+  .route("/:slug/reviews")
   .get(foodController.getAllReviews)
   .post((req, res, next) => {
-    req.body.food = req.params.id;
+    req.body.food = req.params.slug;
     req.body.user = req.user.id;
     next();
   }, foodController.createReview)
