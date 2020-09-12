@@ -22,22 +22,30 @@ class Dish extends PureComponent {
     const { dish } = this.props.match.params;
 
     const fetch = async () => {
-      let res = await api.get(`/foods/${dish}`);
+      try {
+        let res = await api.get(`/foods/${dish}`);
 
-      const food = res.data.data;
+        const food = res.data.data;
 
-      const checkExist = food.reviews.filter((review) => review.user.name === this.props.user.name);
+        let checkExist = []
+        if (this.props.user) {
+          checkExist = food.reviews.filter((review) => review.user.name === this.props.user.name);
+        }
 
-      if (checkExist.length !== 0 && this.state.review !== checkExist.review) {
-        this.setState({
-          food,
-          review: checkExist[0].review,
-          reviewExist: true,
-          reviewId: checkExist[0].id,
-          rating: checkExist[0].rating,
-        });
-      } else {
-        this.setState({ food, reviewExist: false });
+        if (checkExist.length !== 0 && this.state.review !== checkExist.review) {
+          this.setState({
+            food,
+            review: checkExist[0].review,
+            reviewExist: true,
+            reviewId: checkExist[0].id,
+            rating: checkExist[0].rating,
+          });
+        } else {
+          this.setState({ food, reviewExist: false });
+        }
+      } catch (error) {
+        console.log(error);
+        this.props.setAlert("Something Went Wrong :(", "danger");
       }
     };
     fetch();

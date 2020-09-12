@@ -33,7 +33,7 @@ class Header extends PureComponent {
   render() {
     let header;
 
-    if (this.props.location.pathname === "/sign") {
+    if (this.props.location.pathname.includes('/sign')) {
       header = (
         <header className="header-sign">
           <nav className="nav">
@@ -68,10 +68,10 @@ class Header extends PureComponent {
                 <NavLink to="/menu">Menu</NavLink>
               </div>
               <div className="nav__login nav__link">
-                <NavLink to="/sign">Login</NavLink>
+                <NavLink to="/sign/?login=true">Login</NavLink>
               </div>
               <div className="nav__signup nav__link nav__link--active">
-                <NavLink to="/sign">Sign Up</NavLink>
+                <NavLink to="/sign/?login=false">Sign Up</NavLink>
               </div>
             </div>
           </nav>
@@ -110,15 +110,19 @@ class Header extends PureComponent {
                   </div>
                 </div>
                 <div style={this.state.accDrop} className="content">
-                  <NavLink to="/me">My Account</NavLink>
+                  <NavLink to="/me/settings">My Settings</NavLink>
                   <NavLink to="/me/orders">My Orders</NavLink>
-                  <NavLink to="/me/settings">Setting</NavLink>
+                  <NavLink to="/me/reviews">My Reviews</NavLink>
+                  <NavLink to="/me/billing">Billing</NavLink>
                   <Link to="/sign" onClick={this.handleLogout}>
                     Logout
                   </Link>
                 </div>
               </div>
               <div onClick={this.handleCartPos} className="nav__cart nav__link">
+                {this.props.cart.length > 0 ? (
+                  <p className="cart__quantity">{this.props.cart.length}</p>
+                ) : null}
                 <ion-icon name="cart-outline"></ion-icon>
               </div>
             </div>

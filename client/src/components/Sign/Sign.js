@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
+import QueryString from "query-string";
 
 import chefSign from "../../resources/images/sign/chef-sign.png";
 
@@ -8,7 +9,7 @@ import styled from "styled-components";
 
 import { WobbleErrorForm } from "../../utils/animations";
 
-import {  register, login } from "../../store/actions/auth";
+import { register, login } from "../../store/actions/auth";
 
 import { Spinner } from "../Layout/Spinner/Spinner";
 
@@ -25,6 +26,14 @@ class Sign extends PureComponent {
       errorMessage: null,
       login: false,
     };
+  }
+
+  componentDidMount() {
+    if (this.props.location.search) {
+      const query = QueryString.parse(this.props.location.search);
+      const isTrue = query.login;
+      this.setState({ login: isTrue === "true" ? true : false });
+    }
   }
 
   handleOnSumbmit = async (e) => {

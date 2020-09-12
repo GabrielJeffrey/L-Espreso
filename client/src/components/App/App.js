@@ -34,7 +34,7 @@ class App extends PureComponent {
           <Route path="/sign" exact component={Sign} />
           <Route path="/menu" exact component={Menu} />
           <Route path="/menu/:dish" component={Dish} />
-          <Route path="/me" exact component={Account} />
+          <Route path="/me/:sub" exact component={Account} />
         </Switch>
 
         <Route
