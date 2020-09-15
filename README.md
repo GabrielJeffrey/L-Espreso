@@ -3,7 +3,7 @@
 My First Ever Production-Level MERN Application, For a fictional company "L'Espresso" - Online Food
 Ordering System.
 
-Running Live on : [Heroku](https://serene-basin-18780.herokuapp.com/)
+Running Live on : [Heroku](https://l-espresso.herokuapp.com/)
 
 # Quick Start 🚀
 
@@ -37,7 +37,7 @@ npm install
 ### Run both Express & React from root
 
 ```bash
-npm run dev
+npm run server
 ```
 
 ## App Info
