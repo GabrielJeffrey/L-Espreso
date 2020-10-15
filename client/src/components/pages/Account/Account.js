@@ -68,7 +68,7 @@ class Account extends PureComponent {
   };
 
   handleClickAva = () => this.setState((prevState) => ({ isActive: !prevState.isActive }));
-  handleAvatarSelect = (e, avatar) => this.setState({ avatar });
+  handleAvatarSelect = (e, avatar) => this.setState({ avatar }, this.handleClickAva());
 
   render() {
     const { sub } = this.props.match.params;

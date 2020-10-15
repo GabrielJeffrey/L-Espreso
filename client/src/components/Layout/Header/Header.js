@@ -137,8 +137,7 @@ class Header extends PureComponent {
       );
     }
 
-    if (this.props.loading && this.props.location.pathname !== "/sign/") {
-      console.log(this.props.location.pathname);
+    if (this.props.loading && !this.props.location.pathname.includes("sign")) {
       header = <header className="header-normal"></header>;
     }
 
