@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { withTheme } from "../../../provider/ThemeProvider";
 
 import { Link } from "react-router-dom";
@@ -32,6 +32,10 @@ import { Spinner } from "../../Layout/Spinner/Spinner";
 import { connect } from "react-redux";
 
 const Home = (props) => {
+  useEffect(() => {
+    document.title = `L'Espresso - Welcome To L'Espresso`;
+  }, []);
+
   const content = [
     {
       category: "pizza",

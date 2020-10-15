@@ -19,6 +19,8 @@ class Dish extends PureComponent {
   };
 
   componentDidMount() {
+    document.title = `L'Espresso - Dish`;
+
     const { dish } = this.props.match.params;
 
     const fetch = async () => {
@@ -27,7 +29,7 @@ class Dish extends PureComponent {
 
         const food = res.data.data;
 
-        let checkExist = []
+        let checkExist = [];
         if (this.props.user) {
           checkExist = food.reviews.filter((review) => review.user.name === this.props.user.name);
         }
@@ -43,6 +45,8 @@ class Dish extends PureComponent {
         } else {
           this.setState({ food, reviewExist: false });
         }
+
+        document.title = `L'Espresso - ${food.name}`;
       } catch (error) {
         console.log(error);
         this.props.setAlert("Something Went Wrong :(", "danger");

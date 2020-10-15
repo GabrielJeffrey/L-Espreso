@@ -21,6 +21,7 @@ class Account extends PureComponent {
   };
 
   componentDidMount() {
+    document.title = `L'Espresso - ${this.props.user.name} Dashboard`;
     if (this.props.user) {
       this.setState({ avatar: this.props.user.avatar });
     }

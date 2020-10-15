@@ -29,6 +29,7 @@ class Sign extends PureComponent {
   }
 
   componentDidMount() {
+    document.title = "L'Espresso - Join us on the adventure";
     if (this.props.location && this.props.location.search) {
       const query = QueryString.parse(this.props.location.search);
       const isTrue = query.login;

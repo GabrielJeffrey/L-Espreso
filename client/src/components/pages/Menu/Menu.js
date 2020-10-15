@@ -9,6 +9,8 @@ import FoodCard from "../../Layout/FoodCard/FoodCard";
 
 class Menu extends Component {
   componentDidMount() {
+    document.title = `L'Espresso - Menu`;
+
     this.props.loadMenu();
   }
 
