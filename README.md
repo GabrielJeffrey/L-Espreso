@@ -1,7 +1,7 @@
 # L-Espresso
 
-My First Ever Production-Level MERN Application, For a fictional company "L'Espresso" - Online Food
-Ordering System.
+My First Ever Production-Level MERN Application, For a fictional company "L'Espresso" - An Online Food
+Ordering Web Application.
 
 Running Live on : [Heroku](https://l-espresso.herokuapp.com/)
 
