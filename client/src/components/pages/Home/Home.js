@@ -32,8 +32,6 @@ import { Spinner } from "../../Layout/Spinner/Spinner";
 import { connect } from "react-redux";
 
 const Home = (props) => {
-  const [loading, setLoading] = useState(true);
-
   const content = [
     {
       category: "pizza",
@@ -45,17 +43,15 @@ const Home = (props) => {
     },
   ];
 
-  setTimeout(() => {
-    setLoading(false);
-  }, Math.random() * 5 + 1000);
-
   return (
     <>
-      <div className="spinner__home">
-        <Spinner />
-      </div>
-      {loading ? (
-        <AreaHolder />
+      {props.loading ? (
+        <>
+          <div className="spinner__home">
+            <Spinner />
+          </div>
+          <AreaHolder />
+        </>
       ) : (
         <>
           <PizzaSide custom="home__pizza">Order</PizzaSide>
@@ -303,6 +299,7 @@ const AreaHolder = styled.div`
 
 const mapStateToProps = (state) => ({
   isAuth: state.auth.isAuthenticated,
+  loading: state.auth.loading,
 });
 
 export default connect(mapStateToProps)(withTheme(Home));

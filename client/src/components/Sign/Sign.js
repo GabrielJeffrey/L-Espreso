@@ -29,7 +29,7 @@ class Sign extends PureComponent {
   }
 
   componentDidMount() {
-    if (this.props.location.search) {
+    if (this.props.location && this.props.location.search) {
       const query = QueryString.parse(this.props.location.search);
       const isTrue = query.login;
       this.setState({ login: isTrue === "true" ? true : false });

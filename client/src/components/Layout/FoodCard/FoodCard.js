@@ -6,7 +6,7 @@ import { addCart, removeCart } from "../../../store/actions/cart";
 
 const FoodCard = ({ dish, cart, addCart, removeCart, isAuth }) => {
   const history = useHistory();
-  const [food, setFood] = useState({
+  const [food] = useState({
     name: dish.name,
     image: dish.image,
     slug: dish.slug,

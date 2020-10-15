@@ -33,7 +33,7 @@ class Header extends PureComponent {
   render() {
     let header;
 
-    if (this.props.location.pathname.includes('/sign')) {
+    if (this.props.location.pathname.includes("/sign")) {
       header = (
         <header className="header-sign">
           <nav className="nav">
@@ -137,7 +137,8 @@ class Header extends PureComponent {
       );
     }
 
-    if (this.props.loading && this.props.location.pathname !== "/sign") {
+    if (this.props.loading && this.props.location.pathname !== "/sign/") {
+      console.log(this.props.location.pathname);
       header = <header className="header-normal"></header>;
     }
 
